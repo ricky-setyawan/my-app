@@ -1,0 +1,87 @@
+@keyframes glowing {
+  0% {
+    box-shadow: 0 0 2px #87CEEB, 0 0 4px #87CEEB, 0 0 6px #87CEEB, 0 0 8px #87CEEB, 0 0 10px #87CEEB;
+  }
+  33% {
+    box-shadow: 0 0 4px #8a2be2, 0 0 6px #8a2be2, 0 0 8px #8a2be2, 0 0 10px #8a2be2, 0 0 12px #8a2be2;
+  }
+  66% {
+    box-shadow: 0 0 6px #00FFFF, 0 0 8px #00FFFF, 0 0 10px #00FFFF, 0 0 12px #00FFFF, 0 0 14px #00FFFF;
+  }
+  100% {
+    box-shadow: 0 0 2px #87CEEB, 0 0 4px #87CEEB, 0 0 6px #87CEEB, 0 0 8px #87CEEB, 0 0 10px #87CEEB;
+  }
+}
+
+.glowing-logo {
+  animation: glowing 5s infinite;
+  border-radius: 100%;
+  background-color: transparent;
+  display: inline-block;
+}
+
+/* Other CSS styles */
+
+@media (max-width: 640px) {
+  .glowing-logo {
+    top: 50%;
+    /* position: absolute; */
+    margin-left: -1%;
+    transform: translate(-50%, -50%);
+    width: 32%; /* Make the logo smaller for mobile */
+    height: 15%;
+  }
+}
+.input-container {
+  position: absolute;
+  bottom: 20px; /* Uplifted further from the bottom */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%; /* Slightly reduced width for a more compact look */
+  background-color: #252525;
+  padding: 8px 10px; /* Reduced padding to decrease height */
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  height: 50px; /* Adjust the height as needed */
+  display: flex; /* Ensure the elements inside align properly */
+  align-items: center; /* Vertically center the content */
+}
+
+
+input[type="text"] {
+  border-radius: 25px; /* Curved corners for the textbox */
+  box-shadow: none; /* Removes any unwanted shadow or outline */
+}
+
+button {
+  border-radius: 50%; /* Circular buttons */
+}
+
+/* Sidebar styles */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 250px;
+  height: 100%;
+  background-color: #2d2d2d;
+  z-index: 10;
+  transition: transform 0.3s ease;
+  transform: translateX(-100%);
+}
+
+/* Sidebar open state */
+.sidebar-open {
+  transform: translateX(0);
+}
+
+/* Main content wrapper */
+.main-content {
+  transition: margin-left 0.3s ease;
+  margin-left: 0;
+}
+
+/* Shifted content when the sidebar is open */
+.shifted {
+  margin-left: 250px; /* Width of the sidebar */
+}
